@@ -316,7 +316,7 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
+      <!--<plugin>
         <groupId>com.coderplus.maven.plugins</groupId>
         <artifactId>copy-rename-maven-plugin</artifactId>
         <version>1.0.1</version>
@@ -333,7 +333,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
       <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
@@ -725,7 +725,7 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
+      <!--<plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
@@ -777,7 +777,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
       <plugin>
         <groupId>com.atlassian.maven.plugins</groupId>
         <artifactId>maven-clover2-plugin</artifactId>
@@ -972,7 +972,7 @@
               </execution>
             </executions>
           </plugin>
-          <plugin>
+          <!--<plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
             <executions>
@@ -986,14 +986,14 @@
                   <executable>choco.exe</executable>
                   <arguments>
                     <argument>pack</argument>
-                    <argument>--version=${project.version}</argument>
+                    <argument>&#45;&#45;version=${project.version}</argument>
                     <argument>${basedir}/target/ambari-server-${project.version}-choco/ambari-server.nuspec</argument>
                   </arguments>
                   <workingDirectory>target/ambari-server-${project.version}-choco</workingDirectory>
                 </configuration>
               </execution>
             </executions>
-          </plugin>
+          </plugin>-->
         </plugins>
       </build>
     </profile>

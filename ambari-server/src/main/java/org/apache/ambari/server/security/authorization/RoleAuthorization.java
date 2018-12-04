@@ -27,6 +27,8 @@ import java.util.Set;
  * <p/>
  * This data matches the <code>roleauthorization</code> table in the Ambari database. The value field
  * of each item represents the <code>roleauthorization.authorization_id</code> value.
+ * 角色授权是可应用于集群和视图等资源的粒度授权的枚举。
+ * 此数据与Ambari数据库中的角色授权表匹配。每个项的值字段表示roleauthorization.authorization_id的值。
  */
 public enum RoleAuthorization {
   AMBARI_ADD_DELETE_CLUSTERS("AMBARI.ADD_DELETE_CLUSTERS"),
@@ -164,7 +166,7 @@ public enum RoleAuthorization {
 
   /**
    * Safely translates a role authorization Id to a RoleAuthorization
-   *
+   * 安全地将角色授权Id转换为角色授权
    * @param authenticationId an authentication id
    * @return a RoleAuthorization or null if no translation can be made
    */

@@ -21,6 +21,7 @@ package org.apache.ambari.server.events;
 /**
  * The {@link ClusterConfigChangedEvent} class is fired when a
  * cluster configuration is successfully updated.
+ * 当集群配置成功更新时，将触发ClusterConfigChangedEvent类。
  */
 public class ClusterConfigChangedEvent extends AmbariEvent {
   private String m_clusterName;

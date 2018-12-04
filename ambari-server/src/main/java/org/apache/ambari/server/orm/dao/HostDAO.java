@@ -115,6 +115,7 @@ public class HostDAO {
     entityManagerProvider.get().remove(hostEntity);
   }
 
+  //通过传入hostIds获取到对应的主机名列表
   public List<String> getHostNamesByHostIds(List<Long> hostIds) {
     List<String> hostNames = new ArrayList<>();
     if (hostIds != null) {

@@ -27,12 +27,14 @@ import java.util.Set;
  * The resource provider plugs into and is used by the
  * {@link ClusterController cluster controller} to obtain a list of resources
  * for a given request.
+ * 资源提供程序允许为资源类型插入后端数据存储。资源提供程序与特定的资源类型相关联，可以查询该类型的资源列表。
+ * 资源提供者插入并由集群控制器使用，以获取给定请求的资源列表。
  */
 public interface ResourceProvider {
 
   /**
    * Create the resources defined by the properties in the given request object.
-   *
+   *创建由给定请求对象中的属性定义的资源。
    *
    * @param request  the request object which defines the set of properties
    *                 for the resources to be created
@@ -65,7 +67,10 @@ public interface ResourceProvider {
    * A simple implementation of a resource provider may choose to just return all of
    * the resources of a given type and allow the calling cluster controller to filter
    * based on the predicate.
-   *
+   * 根据给定的请求和断言信息获取一组资源。注意，此资源提供程序不需要完全根据给定断言过滤资源集。
+   * 这可能是不可能的，因为涉及的一些属性可能由另一个提供者提供。
+   * 允许这种部分过滤，因为断言总是由调用的集群控制器应用。断言这个级别上是可用的，因此可以将某些预过滤作为优化完成。
+   * 资源提供程序的简单实现可以选择只返回给定类型的所有资源，并允许调用集群控制器根据断言进行过滤。
    *
    * @param request    the request object which defines the desired set of properties
    * @param predicate  the predicate object which can be used to filter which
@@ -86,7 +91,7 @@ public interface ResourceProvider {
   /**
    * Update the resources selected by the given predicate with the properties
    * from the given request object.
-   *
+   * 使用来自给定请求对象的属性更新给定断言选择的资源。
    *
    *
    * @param request    the request object which defines the set of properties
@@ -109,7 +114,7 @@ public interface ResourceProvider {
 
   /**
    * Delete the resources selected by the given predicate.
-   *
+   * 删除给定断言选择的资源。
    * @param request   the request object which defines the set of properties
    *                  for the resources to be updated
    * @param predicate the predicate object which can be used to filter which
@@ -136,7 +141,9 @@ public interface ResourceProvider {
    * its associated 'Cluster', 'Host' and 'Component' resources.  The key property ids
    * for a 'HostComponent' resource includes the property ids of the foreign key
    * references from the 'HostComponent' to 'Cluster', 'Host' and 'Component' resources.
-   *
+   * 获取与此资源提供程序关联的资源类型的关键属性id。关键属性是那些唯一标识资源的属性。
+   * 例如，资源“HostComponent”由其关联的“Cluster”、“Host”和“Component”资源唯一标识。
+   * “HostComponent”资源的关键属性id包括从“HostComponent”到“Cluster”、“Host”和“Component”资源的外键引用的属性id。
    * @return a map of key property ids
    */
   Map<Resource.Type, String> getKeyPropertyIds();
@@ -144,7 +151,7 @@ public interface ResourceProvider {
   /**
    * Check whether the set of given property ids is supported by this resource
    * provider.
-   *
+   * 检查该资源提供程序是否支持给定属性id集。
    * @return a subset of the given property id set containing any property ids not
    *         supported by this resource provider.  An empty return set indicates
    *         that all of the given property ids are supported.

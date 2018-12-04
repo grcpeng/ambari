@@ -76,8 +76,11 @@ public class MetricsRequestHelperTest {
     replay(httpURLConnectionMock, urlStreamProviderMock);
 
     //Case 1 : No error.
-    String randomSpec = "http://localhost:6188/ws/v1/timeline/metrics?metricNames=cpu_wio&hostname=host1&appId=HOST" +
-      "&startTime=1447912834&endTime=1447990034&precision=SECONDS";
+//    String randomSpec = "http://localhost:6188/ws/v1/timeline/metrics?metricNames=cpu_wio&hostname=host1&appId=HOST" +
+//      "&startTime=1447912834&endTime=1447990034&precision=SECONDS";
+
+	  String randomSpec = "http://hadoop09-test1-rgtj1-tj1:8088/ws/v1/timeline/metrics?metricNames=yarn.ClusterMetrics.AMLaunchDelayAvgTime"+
+		  "&hostname=hadoop09-test1-rgtj1-tj1&appId=resourcemanager&startTime=1541329897974&endTime=1541330027974&precision=MINUTES";
     MetricsRequestHelper metricsRequestHelper = new MetricsRequestHelper(urlStreamProviderMock);
     metricsRequestHelper.fetchTimelineMetrics(new URIBuilder(randomSpec), now, now + 300);
 

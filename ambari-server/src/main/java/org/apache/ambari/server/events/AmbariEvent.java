@@ -20,11 +20,13 @@ package org.apache.ambari.server.events;
 
 /**
  * The {@link AmbariEvent} class is the base for all events in Ambari.
+ * AmbariEvent类是Ambari中所有事件的基础。
  */
 public abstract class AmbariEvent {
 
   /**
    * The {@link AmbariEventType} defines the type of Ambari event.
+   * AmbariEventType定义Ambari事件的类型。
    */
   public enum AmbariEventType {
     /**

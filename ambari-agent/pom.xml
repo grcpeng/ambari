@@ -198,7 +198,7 @@
           <groups>${testcase.groups}</groups>
         </configuration>
       </plugin>
-      <plugin>
+     <!-- <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <executions>
@@ -240,7 +240,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin>-->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>properties-maven-plugin</artifactId>
@@ -745,7 +745,7 @@
             </executions>
           </plugin>
           <!-- choco package creation -->
-          <plugin>
+          <!--<plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
             <executions>
@@ -759,14 +759,14 @@
                   <executable>choco.exe</executable>
                   <arguments>
                     <argument>pack</argument>
-                    <argument>--version=${project.version}</argument>
+                    <argument>&#45;&#45;version=${project.version}</argument>
                     <argument>${basedir}/target/ambari-agent-${project.version}-choco/ambari-agent.nuspec</argument>
                   </arguments>
                   <workingDirectory>target/ambari-agent-${project.version}-choco</workingDirectory>
                 </configuration>
               </execution>
             </executions>
-          </plugin>
+          </plugin>-->
             <!-- end choco package creation -->
         </plugins>
       </build>

@@ -330,6 +330,8 @@ public class ClusterImpl implements Cluster {
    * A simple cache for looking up {@code cluster-env} properties for a cluster.
    * This map is changed whenever {{cluster-env}} is changed and we receive a
    * {@link ClusterConfigChangedEvent}.
+   * 一个用于查找集群的{@code cluster-env}属性的简单缓存。当{{cluster-env}}发生变化时，
+   * 这个映射就会发生变化，我们会收到{@link ClusterConfigChangedEvent}。
    */
   private Map<String, String> m_clusterPropertyCache = new ConcurrentHashMap<>();
 

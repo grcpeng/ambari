@@ -2981,7 +2981,7 @@ public class Configuration {
   /**
    * Writes the given properties into the configuration file
    *
-   * @param propertiesToWrite
+   * @param propertiesToStore
    *          the properties to be stored
    * @param append
    *          if {@code true} the given properties will be added at the end of the
@@ -3004,7 +3004,7 @@ public class Configuration {
   /**
    * Removing the given properties from ambari.properties (i.e. at upgrade time)
    *
-   * @param propertiesToBeCleared
+   * @param propertiesToBeRemoved
    *          the properties to be removed
    * @throws AmbariException
    *           if there was any issue when clearing ambari.properties

@@ -92,7 +92,10 @@ public class AMSPropertyProviderTest {
   private static final String HOST_NAME_PROPERTY_ID = PropertyHelper.getPropertyId("HostRoles", "host_name");
   private static final String COMPONENT_NAME_PROPERTY_ID = PropertyHelper.getPropertyId("HostRoles", "component_name");
 
-  private static final String FILE_PATH_PREFIX = "ams" + File.separator;
+	/**
+	 * 依赖系统的默认名称分隔符。这个字段被初始化为包含system property file.separator值的第一个字符。在UNIX系统中，该字段的值为'/';在微软的Windows系统上是“\\”。
+	 */
+	private static final String FILE_PATH_PREFIX = "ams" + File.separator;
   private static final String SINGLE_HOST_METRICS_FILE_PATH = FILE_PATH_PREFIX + "single_host_metric.json";
   private static final String MULTIPLE_HOST_METRICS_FILE_PATH = FILE_PATH_PREFIX + "multiple_host_metrics.json";
   private static final String SINGLE_COMPONENT_METRICS_FILE_PATH = FILE_PATH_PREFIX + "single_component_metrics.json";

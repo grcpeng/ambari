@@ -25,6 +25,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * The resource object represents a requested resource.  The resource
  * contains a collection of values for the requested properties.
+ * 资源对象表示所请求的资源。该资源包含请求属性的值集合。
  */
 public interface Resource {
   /**
@@ -39,7 +40,8 @@ public interface Resource {
    * The category/property hierarchy is flattened into a map where
    * each key is the absolute category name and the corresponding
    * value is a map of properties(name/value pairs) for that category.
-   *
+   * 获取此组包含在映射结构中的属性。
+   * 类别/属性层次结构被压扁为一个映射，其中每个键是绝对类别名称，对应的值是该类别的属性(名称/值对)的映射。
    * @return resource properties map
    */
   Map<String, Map<String, Object>> getPropertiesMap();
@@ -192,6 +194,7 @@ public interface Resource {
 
     /**
      * Ordinal number counter for registering external types.
+     * 用于注册外部类型的序号计数器。
      */
     private static int nextOrdinal = 10000;
 
